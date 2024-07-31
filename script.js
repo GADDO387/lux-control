@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Call the fetchSensorData function if the dataTable exists
     if (document.getElementById('dataTable')) {
         fetchSensorData();
+        // Set up interval to fetch sensor data every 5 seconds
+        setInterval(fetchSensorData, 5000);
     }
 
     // Light Control form submission
@@ -60,3 +62,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
