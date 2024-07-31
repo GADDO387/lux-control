@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Function to fetch and display sensor data
     function fetchSensorData() {
-        fetch('temperature_humidity.php')
+        fetch('fetch_sensor_data.php')
             .then(response => response.json())
             .then(data => {
                 const table = document.getElementById('dataTable');
@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     for (let i = rowCount - 1; i > 0; i--) {
                         table.deleteRow(i);
                     }
-                    
+
                     data.forEach(item => {
                         const row = table.insertRow();
                         const idCell = row.insertCell(0);
                         const tempCell = row.insertCell(1);
                         const humidityCell = row.insertCell(2);
                         const datetimeCell = row.insertCell(3);
-                        
+
                         idCell.textContent = item.id;
                         tempCell.textContent = item.temperature;
                         humidityCell.textContent = item.humidity;
@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Call the fetchSensorData function if the dataTable exists
     if (document.getElementById('dataTable')) {
         fetchSensorData();
-        // Set up interval to fetch sensor data every 5 seconds
-        setInterval(fetchSensorData, 5000);
+        // Set up interval to fetch sensor data every 15 seconds
+        setInterval(fetchSensorData, 15000);
     }
 
     // Light Control form submission
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         luxForm.addEventListener('submit', function(event) {
             event.preventDefault();
             const lux = document.getElementById('lux').value;
-            
+
             fetch('light_control.php', {
                 method: 'POST',
                 headers: {
