@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Function to fetch and display sensor data
     function fetchSensorData() {
-        fetch('fetch_sensor_data.php')
+        fetch('combined_script.php') // Use the combined PHP script
             .then(response => response.json())
             .then(data => {
                 const table = document.getElementById('dataTable');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             const lux = document.getElementById('lux').value;
 
-            fetch('light_control.php', {
+            fetch('combined_script.php', { // Use the combined PHP script
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
@@ -62,4 +62,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
