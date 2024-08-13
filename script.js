@@ -17,11 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         const idCell = row.insertCell(0);
                         const tempCell = row.insertCell(1);
                         const humidityCell = row.insertCell(2);
-                        const datetimeCell = row.insertCell(3);
+                        const luxCell = row.insertCell(3);
+                        const datetimeCell = row.insertCell(4);
 
                         idCell.textContent = item.id;
                         tempCell.textContent = item.temperature;
                         humidityCell.textContent = item.humidity;
+                        luxCell.textContent = item.luxvalue;
                         datetimeCell.textContent = item.datetime;
                     });
                 }
@@ -62,3 +64,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
