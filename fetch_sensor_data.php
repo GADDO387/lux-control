@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($lux >= 0 && $lux <= 255) {
         // Open the serial port
-        $serial = fopen('/dev/ttyUSB0', 'w+'); // Update the path to your serial port if needed
+        $serial = fopen('/dev/ttyACM0', 'w+'); // Update the path to your serial port if needed
 
         if ($serial) {
             // Write the setpoint value to the serial port
