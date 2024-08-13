@@ -1,4 +1,3 @@
-<?php
 header('Content-Type: application/json');
 
 $servername = "172.20.10.4";
@@ -16,7 +15,7 @@ if ($conn->connect_error) {
 
 // Handle GET request to fetch data
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $sql = "SELECT id, temperature, humidity, datetime FROM DHT11 ORDER BY datetime DESC LIMIT 10";
+    $sql = "SELECT id, temperature, humidity, luxvalue, datetime FROM DHT11 ORDER BY datetime DESC LIMIT 10";
     $result = $conn->query($sql);
 
     $data = array();
@@ -58,5 +57,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Close the database connection
 $conn->close();
-?>
+
 
