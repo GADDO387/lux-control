@@ -119,6 +119,18 @@ th {
     color: white; /* White text color for table headers */
 }
 
+/* Add specific styles for the LuxValue column */
+td:nth-child(4) {
+    color: #d32f2f; /* Red text for LuxValue column */
+    font-weight: bold;
+}
+
+/* Ensure proper styling for the new column */
+th:nth-child(4) {
+    background-color: #2e7d32; /* Darker green for the LuxValue column header */
+    color: white; /* White text color for the LuxValue column header */
+}
+
 #videoFeed img {
     width: 100%;
     height: auto;
